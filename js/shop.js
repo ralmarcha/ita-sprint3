@@ -83,12 +83,11 @@ function buy(id) {
         cartList.push(product) */
     // 2. Add found product to the cartList array
     generateCart()
-
 }
 
 // Exercise 2
 function cleanCart() {
-    /* cartList = [] */
+    cartList = [] 
     cart = []
     total = 0
     printCart()
@@ -98,7 +97,6 @@ function cleanCart() {
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
     total = 0
-
     for (let i = 0; i < cart.length; i++) {
         const existAplicatedDiscount = cart[i].subtotalWithDiscount
         existAplicatedDiscount ? total += cart[i].subtotalWithDiscount : total += cart[i].subtotal
@@ -118,8 +116,7 @@ function generateCart() {
             product.subtotal = product.price
             cart.push(product)
 
-        } 
-        if (productExist) {
+        } else  {
             product.quantity += 1
             product.subtotal += product.price
         }
